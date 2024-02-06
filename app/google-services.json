@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "298358899414",
+    "project_id": "dbapp1-a2ae0",
+    "storage_bucket": "dbapp1-a2ae0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298358899414:android:a52706d6c01cf975f3bf77",
+        "android_client_info": {
+          "package_name": "br.com.lucca.tecnprintapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXzFKfuo2Rio5qXhE_UGpHJLP236RdjM4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
