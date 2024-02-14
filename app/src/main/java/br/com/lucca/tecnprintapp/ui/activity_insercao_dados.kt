@@ -16,7 +16,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class activity_insercao_dados : AppCompatActivity() {
 
-    private val listaDeProducaoGlobal = ArrayList<Producao>()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -102,6 +102,7 @@ class activity_insercao_dados : AppCompatActivity() {
             buscarNomesProdutos()
         }
     }
+
 
     private fun atualizarSpinnerFuncionarios(nomes: List<String>) {
         val opcoesComHint = mutableListOf("Selecione o funcionário").apply {

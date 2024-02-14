@@ -77,49 +77,14 @@
         android:id="@+id/botaoDeTeste"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Visualização"
+        android:text="Voltar"
         android:textSize="20sp"
         app:layout_constraintTop_toTopOf="@id/botaoConfirmaDados"
         app:layout_constraintStart_toEndOf="@id/botaoConfirmaDados"
-        app:layout_constraintEnd_toStartOf="@id/botaoDeLeitura"
-        android:backgroundTint="@color/cardBackground"
-        />
-
-    <Button
-        android:id="@+id/botaoDeLeitura"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Leitura"
-        android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="@id/botaoConfirmaDados"
-        app:layout_constraintStart_toEndOf="@id/botaoDeTeste"
         app:layout_constraintEnd_toEndOf="parent"
         android:backgroundTint="@color/cardBackground"
         />
 
-    <Button
-        android:id="@+id/botaoAtualizarDados"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Atualizar"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/botaoConfirmaDados"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="@color/cardBackground"
-        />
-
-    <Button
-        android:id="@+id/botaoDeletarDados"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Deletar"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/botaoConfirmaDados"
-        app:layout_constraintStart_toEndOf="@id/botaoAtualizarDados"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="@color/cardBackground"
-        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

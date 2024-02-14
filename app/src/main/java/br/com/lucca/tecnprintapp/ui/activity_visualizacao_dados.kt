@@ -1,5 +1,6 @@
 package br.com.lucca.tecnprintapp.ui
 
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,12 +18,21 @@ class activity_visualizacao_dados : AppCompatActivity() {
 
         botaoInserirDados()
         carregarProducoesDoFirestore()
+        botaoRelatorio()
     }
 
     private fun botaoInserirDados() {
         val botao = findViewById<Button>(R.id.botaoInserirDados)
         botao.setOnClickListener {
             startActivity(Intent(this, activity_insercao_dados::class.java))
+        }
+    }
+
+    private fun botaoRelatorio(){
+
+        val botaoRelatorio: Button = findViewById(R.id.botaoRelatorio)
+        botaoRelatorio.setOnClickListener {
+            startActivity(Intent(this, activity_info_produto::class.java))
         }
     }
 
