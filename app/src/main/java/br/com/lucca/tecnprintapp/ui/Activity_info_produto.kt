@@ -3,6 +3,7 @@ package br.com.lucca.tecnprintapp.ui
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,11 +21,22 @@ class activity_info_produto : AppCompatActivity() {
     private lateinit var funcionarioAdapter: FuncionarioAdapter
     private lateinit var produtoAdapter: ProdutoAdapter
     private lateinit var maquinaAdapter: MaquinaAdapter
+    private lateinit var botaoRelatorioRolos: Button
+    private lateinit var botaoRelatorioSanfonas: Button
+    private lateinit var editPesquisaFuncionario : EditText
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info_produto)
+
+        botaoRelatorioRolos = findViewById(R.id.botaoRelatorioRolos)
+        botaoRelatorioSanfonas = findViewById(R.id.botaoRelatorioSanfonas)
+        editPesquisaFuncionario = findViewById(R.id.editTextPesquisaFuncionario)
+        botaoRelatorioRolos.visibility = View.GONE
+        botaoRelatorioSanfonas.visibility = View.GONE
+        editPesquisaFuncionario.visibility = View.GONE
+
 
         val mainButton: Button = findViewById(R.id.mainButton)
         val mainButton2: Button = findViewById(R.id.mainButton2)
@@ -34,6 +46,7 @@ class activity_info_produto : AppCompatActivity() {
         val optionsContainer: View = findViewById(R.id.optionsRecyclerView)
 
         mainButton.setOnClickListener {
+            ocultarBotao()
             // Alternar a visibilidade do contêiner de opções
             if (optionsContainer.visibility == View.VISIBLE) {
                 optionsContainer.visibility = View.GONE
@@ -55,27 +68,24 @@ class activity_info_produto : AppCompatActivity() {
         }
 
         mainButton2.setOnClickListener {
+
+
             // Alternar a visibilidade do contêiner de opções
+
             if (optionsContainer.visibility == View.VISIBLE) {
                 optionsContainer.visibility = View.GONE
             } else {
-                optionsContainer.visibility = View.VISIBLE
+                botaoRelatorioSanfonas.visibility = View.VISIBLE
+                botaoRelatorioRolos.visibility = View.VISIBLE
 
-                // Limpar opções anteriores
-                produtos.setOnDataLoadedCallback { nomes ->
-                    produtoAdapter = ProdutoAdapter(this, nomes)
-                    recyclerView.adapter = produtoAdapter
-
-                    // Configurar o layout para exibir os botões lado a lado (GridLayoutManager)
-                    val numberOfColumns = 2 // Ou o número desejado de colunas
-                    recyclerView.layoutManager = GridLayoutManager(this, numberOfColumns)
-                }
-
-                produtos.buscarNomesProdutos()
             }
+
         }
 
         mainButton3.setOnClickListener {
+            ocultarBotao()
+
+
             // Alternar a visibilidade do contêiner de opções
             if (optionsContainer.visibility == View.VISIBLE) {
                 optionsContainer.visibility = View.GONE
@@ -95,5 +105,66 @@ class activity_info_produto : AppCompatActivity() {
                 maquinas.buscarNomesMaquinas()
             }
         }
+
+        botaoRelatorioRolos.setOnClickListener {
+            ocultarBotao()
+
+            editPesquisaFuncionario = findViewById(R.id.editTextPesquisaFuncionario)
+            editPesquisaFuncionario.visibility = View.VISIBLE
+
+            if (optionsContainer.visibility == View.VISIBLE) {
+                optionsContainer.visibility = View.GONE
+            } else {
+                optionsContainer.visibility = View.VISIBLE
+
+                // Limpar opções anteriores
+                produtos.setOnDataLoadedCallback { nomes ->
+                    produtoAdapter = ProdutoAdapter(this, nomes)
+                    recyclerView.adapter = produtoAdapter
+
+                    // Configurar o layout para exibir os botões lado a lado (GridLayoutManager)
+                    val numberOfColumns = 2 // Ou o número desejado de colunas
+                    recyclerView.layoutManager = GridLayoutManager(this, numberOfColumns)
+                }
+
+                produtos.buscarNomesProdutos()
+            }
+
+
+
+
+        }
+
+        botaoRelatorioSanfonas.setOnClickListener {
+            ocultarBotao()
+
+            if (optionsContainer.visibility == View.VISIBLE) {
+                optionsContainer.visibility = View.GONE
+            } else {
+                optionsContainer.visibility = View.VISIBLE
+
+                // Limpar opções anteriores
+                produtos.setOnDataLoadedCallback { nomes ->
+                    produtoAdapter = ProdutoAdapter(this, nomes)
+                    recyclerView.adapter = produtoAdapter
+
+                    // Configurar o layout para exibir os botões lado a lado (GridLayoutManager)
+                    val numberOfColumns = 2 // Ou o número desejado de colunas
+                    recyclerView.layoutManager = GridLayoutManager(this, numberOfColumns)
+                }
+
+                produtos.buscarNomesProdutos()
+            }
+
+
+        }
+
+
+    }
+    fun ocultarBotao() {
+
+        botaoRelatorioRolos.visibility = View.GONE
+        botaoRelatorioSanfonas.visibility = View.GONE
+
     }
 }

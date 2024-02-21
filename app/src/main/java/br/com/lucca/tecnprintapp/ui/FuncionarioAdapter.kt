@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import br.com.lucca.tecnprintapp.R
 
@@ -30,7 +31,11 @@ class FuncionarioAdapter(private val context: Context, private val funcionarios:
 
         fun bind(funcionario: String) {
             button.text = funcionario
-            // Adicione lógica de clique se necessário
+
+            button.setOnClickListener {
+                // Exibir um Toast com o nome do funcionário
+                Toast.makeText(itemView.context, "Clicou em: $funcionario", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }

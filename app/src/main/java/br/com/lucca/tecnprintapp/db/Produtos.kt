@@ -8,10 +8,12 @@ class Produtos {
     private val db = FirebaseFirestore.getInstance()
     private var onDataLoaded: ((List<String>) -> Unit)? = null
 
+    //Callback
     fun setOnDataLoadedCallback(callback: (List<String>) -> Unit) {
         onDataLoaded = callback
     }
 
+    //Busca os nomes dos funcionários e adiciona a lista nomes
     fun buscarNomesProdutos() {
         db.collection("Produtos")
             .get()

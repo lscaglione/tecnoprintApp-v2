@@ -30,6 +30,7 @@ class activity_insercao_dados : AppCompatActivity() {
         botaoConfirmar()
     }
 
+    //Troca a activity
     private fun botaoVoltar() {
         val botaoVolta: Button = findViewById(R.id.botaoDeTeste)
         botaoVolta.setOnClickListener {
@@ -42,6 +43,7 @@ class activity_insercao_dados : AppCompatActivity() {
 
 
 
+    //Atualiza os dados de produção atual no firestore para serem visualizados em outra activity
     private fun botaoConfirmar() {
         val botaoConfirmar: Button = findViewById(R.id.botaoConfirmaDados)
         botaoConfirmar.setOnClickListener {
@@ -59,51 +61,51 @@ class activity_insercao_dados : AppCompatActivity() {
         }
     }
 
+
+    //Salva os dados no firestore para serem atualizados na activity de visualização
     private fun salvarProducaoNoFirestore(producao: Producao) {
         val db = FirebaseFirestore.getInstance()
         db.collection("Producoes").document(producao.maquina)
             .set(producao)
-            .addOnSuccessListener {
-                // Logica adicional se necessário
-            }
-            .addOnFailureListener { e ->
-                // Tratamento de erro
-            }
     }
 
 
 
+    //Busca os nomes de funcionários e aciona o callback para atualizar os spinners
     private fun buscarFuncionarios() {
-        // Implementação simulada. Substitua pelo seu método de busca real.
         Funcionarios().apply {
+            buscarNomesFuncionarios()
             setOnDataLoadedCallback { nomes ->
                 atualizarSpinnerFuncionarios(nomes)
             }
-            buscarNomesFuncionarios()
+
         }
     }
 
+    //Busca as máquina e aciona o callback para atualizar os spinners
     private fun buscarMaquinas() {
-        // Implementação simulada. Substitua pelo seu método de busca real.
         Maquinas().apply {
+            buscarNomesMaquinas()
             setOnDataLoadedCallback { nomes ->
                 atualizarSpinnerMaquinas(nomes)
             }
-            buscarNomesMaquinas()
         }
     }
 
+
+    //Busca os produtos e aciona o callback para atualizar os spinners
     private fun buscarProdutos() {
-        // Implementação simulada. Substitua pelo seu método de busca real.
+
         Produtos().apply {
+            buscarNomesProdutos()
             setOnDataLoadedCallback { nomes ->
                 atualizarSpinnerProdutos(nomes)
             }
-            buscarNomesProdutos()
         }
     }
 
 
+    //Spinner que recebe a lista de funcionários e uma "hint", layout do adapter personalizado
     private fun atualizarSpinnerFuncionarios(nomes: List<String>) {
         val opcoesComHint = mutableListOf("Selecione o funcionário").apply {
             addAll(nomes)
@@ -112,6 +114,7 @@ class activity_insercao_dados : AppCompatActivity() {
         findViewById<Spinner>(R.id.spinnerFuncionario).adapter = adapter
     }
 
+    //Spinner que recebe a lista de maquinas e uma "hint", layout do adapter personalizado
     private fun atualizarSpinnerMaquinas(nomes: List<String>) {
         val opcoesComHint = mutableListOf("Selecione a máquina").apply {
             addAll(nomes)
@@ -120,6 +123,7 @@ class activity_insercao_dados : AppCompatActivity() {
         findViewById<Spinner>(R.id.spinnerMaquina).adapter = adapter
     }
 
+    //Spinner que recebe a lista de produtos e uma "hint", layout do adapter personalizado
     private fun atualizarSpinnerProdutos(nomes: List<String>) {
         val opcoesComHint = mutableListOf("Selecione o produto").apply {
             addAll(nomes)
