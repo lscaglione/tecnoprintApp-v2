@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.lucca.tecnprintapp.R
 import br.com.lucca.tecnprintapp.db.Funcionarios
@@ -42,6 +43,7 @@ class activity_info_produto : AppCompatActivity() {
         val mainButton2: Button = findViewById(R.id.mainButton2)
         val mainButton3: Button = findViewById(R.id.mainButton3)
         recyclerView = findViewById(R.id.optionsRecyclerView)
+
 
         val optionsContainer: View = findViewById(R.id.optionsRecyclerView)
 
@@ -124,7 +126,7 @@ class activity_info_produto : AppCompatActivity() {
 
                     // Configurar o layout para exibir os botões lado a lado (GridLayoutManager)
                     val numberOfColumns = 2 // Ou o número desejado de colunas
-                    recyclerView.layoutManager = GridLayoutManager(this, numberOfColumns)
+                    recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
                 }
 
                 produtos.buscarNomesProdutos()
@@ -138,6 +140,9 @@ class activity_info_produto : AppCompatActivity() {
         botaoRelatorioSanfonas.setOnClickListener {
             ocultarBotao()
 
+            editPesquisaFuncionario = findViewById(R.id.editTextPesquisaFuncionario)
+            editPesquisaFuncionario.visibility = View.VISIBLE
+
             if (optionsContainer.visibility == View.VISIBLE) {
                 optionsContainer.visibility = View.GONE
             } else {
@@ -150,7 +155,7 @@ class activity_info_produto : AppCompatActivity() {
 
                     // Configurar o layout para exibir os botões lado a lado (GridLayoutManager)
                     val numberOfColumns = 2 // Ou o número desejado de colunas
-                    recyclerView.layoutManager = GridLayoutManager(this, numberOfColumns)
+                    recyclerView.layoutManager = GridLayoutManager(this, 2)
                 }
 
                 produtos.buscarNomesProdutos()

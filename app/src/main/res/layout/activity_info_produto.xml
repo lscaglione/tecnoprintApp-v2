@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,28 +11,27 @@
         android:id="@+id/tituloRelatorios"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Relatórios"
+        android:textAlignment="center"
         android:textColor="@color/textColor"
         android:textSize="40dp"
-        android:textAlignment="center"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/mainButton"
-        android:layout_marginTop="20dp"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/mainButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Funcionários"
         android:layout_centerInParent="true"
-        app:layout_constraintTop_toBottomOf="@id/tituloRelatorios"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/mainButton2"
         android:layout_marginTop="40dp"
         android:backgroundTint="@color/cardBackground"
+        android:text="Funcionários"
+        app:layout_constraintEnd_toStartOf="@id/mainButton2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tituloRelatorios"
 
         />
 
@@ -41,12 +39,12 @@
         android:id="@+id/mainButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Produtos"
         android:layout_centerInParent="true"
-        app:layout_constraintTop_toTopOf="@id/mainButton"
-        app:layout_constraintStart_toEndOf="@id/mainButton"
-        app:layout_constraintEnd_toStartOf="@id/mainButton3"
         android:backgroundTint="@color/cardBackground"
+        android:text="Produtos"
+        app:layout_constraintEnd_toStartOf="@id/mainButton3"
+        app:layout_constraintStart_toEndOf="@id/mainButton"
+        app:layout_constraintTop_toTopOf="@id/mainButton"
 
         />
 
@@ -54,11 +52,11 @@
         android:id="@+id/mainButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Máquinas"
-        app:layout_constraintTop_toTopOf="@id/mainButton"
-        app:layout_constraintStart_toEndOf="@id/mainButton2"
-        app:layout_constraintEnd_toEndOf="parent"
         android:backgroundTint="@color/cardBackground"
+        android:text="Máquinas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/mainButton2"
+        app:layout_constraintTop_toTopOf="@id/mainButton"
 
         />
 
@@ -66,12 +64,12 @@
         android:id="@+id/botaoRelatorioRolos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rolos"
         android:layout_marginTop="50dp"
-        app:layout_constraintTop_toBottomOf="@id/mainButton2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/botaoRelatorioSanfonas"
         android:backgroundTint="@color/cardBackground"
+        android:text="Rolos"
+        app:layout_constraintEnd_toStartOf="@id/botaoRelatorioSanfonas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainButton2"
 
         />
 
@@ -79,12 +77,12 @@
         android:id="@+id/botaoRelatorioSanfonas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sanfonas"
         android:layout_marginTop="50dp"
-        app:layout_constraintTop_toBottomOf="@id/mainButton2"
-        app:layout_constraintStart_toEndOf="@id/botaoRelatorioRolos"
-        app:layout_constraintEnd_toEndOf="parent"
         android:backgroundTint="@color/cardBackground"
+        android:text="Sanfonas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/botaoRelatorioRolos"
+        app:layout_constraintTop_toBottomOf="@id/mainButton2"
 
         />
 
@@ -92,31 +90,30 @@
         android:id="@+id/editTextPesquisaFuncionario"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Digite ou selecione o nome do funcionário"
-        android:inputType="text"
-        android:backgroundTint="@color/cardBackground"
-        android:textColorHint="@color/textColor"
-        android:imeOptions="actionDone"
-        android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/mainButton2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="50dp"
-    />
+        android:layout_marginRight="10dp"
+        android:backgroundTint="@color/cardBackground"
+        android:hint="Digite ou selecione o produto"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:textColorHint="@color/textColor"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainButton2"
+        />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/optionsRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/editTextPesquisaFuncionario"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextPesquisaFuncionario"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

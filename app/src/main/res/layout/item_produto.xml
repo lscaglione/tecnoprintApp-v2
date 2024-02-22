@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Button
+<androidx.appcompat.widget.AppCompatButton
+
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/produtoButton"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="@color/cardBackground"
     android:layout_margin="20dp"
-
+    android:background="@drawable/background_button_recyclerview"
+    android:textColor="@color/textColor"
 
     />
+
