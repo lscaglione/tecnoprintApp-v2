@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blueDark"
+    tools:context=".ui.ActivitySalvarProducao">
+
+
+    <TextView
+        android:id="@+id/tituloInserirDados"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Salvar Produção"
+        android:textAlignment="center"
+        android:textColor="@color/textColor"
+        android:textSize="30sp"
+        android:layout_margin="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/spinnerFuncionarioProducao"/>
+    
+
+
+    <Spinner
+        android:id="@+id/spinnerFuncionarioProducao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_spinner"
+        android:padding="16dp"
+        android:layout_margin="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tituloInserirDados"
+        app:layout_constraintBottom_toTopOf="@id/spinnerMaquinaProducao"
+        />
+
+    <Spinner
+        android:id="@+id/spinnerMaquinaProducao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_spinner"
+        android:padding="20dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toBottomOf="@id/spinnerFuncionarioProducao"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/data"
+        app:layout_constraintBottom_toTopOf="@id/editTextLote"
+         />
+
+    <EditText
+        android:id="@+id/data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_spinner"
+        android:textColor="@color/textColor"
+        android:padding="16dp"
+        android:layout_margin="20dp"
+        android:textColorHint="@color/textColor"
+        android:textSize="20sp"
+        android:hint="Data"
+        app:layout_constraintTop_toBottomOf="@id/spinnerFuncionarioProducao"
+        app:layout_constraintStart_toEndOf="@id/spinnerMaquinaProducao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/editTextLote"
+        />
+
+    <EditText
+        android:id="@+id/editTextLote"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/textColor"
+        android:textColor="@color/textColor"
+        android:layout_margin="20dp"
+        android:padding="16dp"
+        android:textSize="20sp"
+        android:hint="Lote"
+        android:inputType="number"
+        android:background="@drawable/background_spinner"
+        app:layout_constraintTop_toBottomOf="@id/spinnerMaquinaProducao"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/editTextQuantidade"
+        app:layout_constraintBottom_toTopOf="@id/editTextPesquisaProdutos"
+
+        />
+
+    <EditText
+        android:id="@+id/editTextQuantidade"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="20sp"
+        android:inputType="number"
+        android:hint="Qtd"
+        android:layout_marginEnd="20dp"
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/textColor"
+        android:background="@drawable/background_spinner"
+        app:layout_constraintTop_toTopOf="@id/editTextLote"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/editTextLote"
+        app:layout_constraintBottom_toBottomOf="@id/editTextLote"
+
+
+        />
+
+    <EditText
+        android:id="@+id/editTextPesquisaProdutos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/background_spinner"
+        android:hint="Digite ou selecione o produto"
+        android:textColorHint="@color/textColor"
+        android:textColor="@color/textColor"
+        android:textSize="20sp"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextLote"
+        app:layout_constraintBottom_toTopOf="@id/producaoRecyclerView"
+        />
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/producaoRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextPesquisaProdutos"
+        app:layout_constraintBottom_toTopOf="@id/botaoConfirmarProducao"/>
+
+    <Button
+        android:id="@+id/botaoConfirmarProducao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/cardBackground"
+        android:text="Confirmar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/producaoRecyclerView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="20dp"
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

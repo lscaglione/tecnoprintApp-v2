@@ -100,16 +100,6 @@
                         app:layout_constraintTop_toBottomOf="@id/textview2"
 
                         />
-                    <Button
-                        android:id="@+id/botaoCardView1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Salvar dados"
-                        app:layout_constraintTop_toBottomOf="@id/textview3"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -179,16 +169,6 @@
 
                         />
 
-                    <Button
-                        android:id="@+id/botaoCardView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Salvar dados"
-                        app:layout_constraintTop_toBottomOf="@id/textview6"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -258,16 +238,6 @@
 
                         />
 
-                    <Button
-                        android:id="@+id/botaoCardView3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Salvar dados"
-                        app:layout_constraintTop_toBottomOf="@id/textview9"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -336,16 +306,7 @@
 
                         />
 
-                    <Button
-                        android:id="@+id/botaoCardView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Salvar dados"
-                        app:layout_constraintTop_toBottomOf="@id/textview12"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        />
+
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -415,16 +376,7 @@
 
                         />
 
-                    <Button
-                        android:id="@+id/botaoCardView5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Salvar dados"
-                        app:layout_constraintTop_toBottomOf="@id/textview15"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        />
+
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -493,16 +445,7 @@
 
                         />
 
-                    <Button
-                        android:id="@+id/botaoCardView6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Salvar dados"
-                        app:layout_constraintTop_toBottomOf="@id/textview18"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        />
+
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -572,16 +515,7 @@
 
                         />
 
-                    <Button
-                        android:id="@+id/botaoCardView7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Salvar dados"
-                        app:layout_constraintTop_toBottomOf="@id/textview21"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        />
+
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -650,16 +584,7 @@
 
                         />
 
-                    <Button
-                        android:id="@+id/botaoCardView8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Salvar dados"
-                        app:layout_constraintTop_toBottomOf="@id/textview24"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        />
+
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -730,16 +655,7 @@
 
                         />
 
-                    <Button
-                        android:id="@+id/botaoCardView9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Salvar dados"
-                        app:layout_constraintTop_toBottomOf="@id/textview27"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        />
+
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -809,16 +725,7 @@
 
                         />
 
-                    <Button
-                        android:id="@+id/botaoCardView10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Salvar dados"
-                        app:layout_constraintTop_toBottomOf="@id/textview30"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        />
+
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -849,7 +756,21 @@
                 app:layout_constraintTop_toTopOf="@id/botaoInserirDados"
                 app:layout_constraintBottom_toBottomOf="@id/botaoInserirDados"
                 app:layout_constraintStart_toEndOf="@id/botaoInserirDados"
+                app:layout_constraintEnd_toStartOf="@id/botaoSalvarProducao"
+                />
+
+            <Button
+                android:id="@+id/botaoSalvarProducao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Salvar Producao"
+                android:backgroundTint="@color/cardBackground"
+                android:textColor="@color/textColor"
+                app:layout_constraintTop_toTopOf="@id/botaoInserirDados"
+                app:layout_constraintBottom_toBottomOf="@id/botaoInserirDados"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/botaoRelatorio"
+
                 />
 
 

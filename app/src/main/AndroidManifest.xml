@@ -13,19 +13,13 @@
         android:theme="@style/Theme.TecnprintApp"
         tools:targetApi="31">
         <activity
-            android:name=".Activity_relatorio"
+            android:name=".ui.ActivitySalvarProducao"
             android:exported="false" />
         <activity
             android:name=".ui.activity_insercao_dados"
             android:exported="false" />
         <activity
-            android:name=".ui.activity_info_maquina"
-            android:exported="false" />
-        <activity
-            android:name=".ui.activity_info_produto"
-            android:exported="false" />
-        <activity
-            android:name=".ui.activity_info_funcionario"
+            android:name=".ui.Activity_info_produto"
             android:exported="false" />
         <activity
             android:name=".ui.activity_visualizacao_dados"
