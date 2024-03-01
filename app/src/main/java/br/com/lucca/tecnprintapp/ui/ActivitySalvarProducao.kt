@@ -46,7 +46,7 @@ class ActivitySalvarProducao : AppCompatActivity() {
     }
 
     private fun atualizarSpinnerFuncionarios(nomes: List<String>) {
-        val opcoesComHint = mutableListOf("Selecione o funcionário").apply {
+        val opcoesComHint = mutableListOf("Funcionário").apply {
             addAll(nomes)
         }
         val adapter = ArrayAdapter(this, R.layout.spinner, opcoesComHint).also { it.setDropDownViewResource(R.layout.spinner_dropdown) }
@@ -63,7 +63,7 @@ class ActivitySalvarProducao : AppCompatActivity() {
     }
 
     private fun atualizarSpinnerMaquinas(nomes: List<String>) {
-        val opcoesComHint = mutableListOf("Selecione a máquina").apply {
+        val opcoesComHint = mutableListOf("Máquina").apply {
             addAll(nomes)
         }
         val adapter = ArrayAdapter(this, R.layout.spinner, opcoesComHint).also { it.setDropDownViewResource(R.layout.spinner_dropdown) }
