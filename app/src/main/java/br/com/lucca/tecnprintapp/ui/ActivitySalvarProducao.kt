@@ -6,18 +6,29 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Spinner
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import br.com.lucca.tecnprintapp.R
 import br.com.lucca.tecnprintapp.db.Funcionarios
 import br.com.lucca.tecnprintapp.db.Maquinas
+import br.com.lucca.tecnprintapp.db.Produtos
 import java.util.Calendar
 
 class ActivitySalvarProducao : AppCompatActivity() {
+
+    private val produtos = Produtos()
+    private lateinit var produtosAdapter: ProdutosAdapter
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var editTextPesquisaProdutos: EditText
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_salvar_producao)
 
+
+
+        pesquisaProdutos()
         buscarMaquinas()
         buscarFuncionarios()
         selecionarData()
@@ -92,4 +103,25 @@ class ActivitySalvarProducao : AppCompatActivity() {
             }
         }
     }
+
+    fun pesquisaProdutos() {
+        editTextPesquisaProdutos = findViewById(R.id.editTextPesquisaProdutos)
+        recyclerView = findViewById(R.id.producaoRecyclerView)
+
+
+        editTextPesquisaProdutos.setOnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                produtos.setOnDataLoadedCallback { nomes ->
+                    produtosAdapter = ProdutosAdapter(this, nomes)
+                    recyclerView.adapter = produtosAdapter
+                    recyclerView.layoutManager = GridLayoutManager(this, 2)
+                }
+                produtos.buscarNomesProdutos()
+
+            }
+        }
+
+    }
+
+
 }
