@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TecnprintApp"
         tools:targetApi="31">
+
         <activity
             android:name=".ui.ActivitySalvarProducao"
             android:exported="false" />
@@ -23,7 +24,11 @@
             android:exported="false" />
         <activity
             android:name=".ui.activity_visualizacao_dados"
-            android:exported="true">
+            android:exported="false"/>
+        <activity
+            android:name=".ui.activity_login"
+            android:exported="true" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,3 +38,6 @@
     </application>
 
 </manifest>
+
+
+

@@ -9,6 +9,8 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import br.com.lucca.tecnprintapp.R
 import br.com.lucca.tecnprintapp.db.Producao
+import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class activity_visualizacao_dados : AppCompatActivity() {
