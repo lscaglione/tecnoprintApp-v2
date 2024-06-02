@@ -30,7 +30,7 @@ class activity_login : AppCompatActivity() {
             // Implementar lógica de login
             if (username.isNotEmpty() && password.isNotEmpty()) {
                 // Exemplo: validação de login
-                if (username == "user" && password == "password") {
+                if (username == "user" && password == "password" || username == "lucca" && password == "1994") {
                     startActivity(Intent(this, activity_visualizacao_dados::class.java))
                     // Redirecionar para outra Activity ou funcionalidade
                 } else {
